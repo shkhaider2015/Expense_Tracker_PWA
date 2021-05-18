@@ -11,24 +11,20 @@ const data: {name:string, price:number}[] = [
         price: 900
     },
     {
-        name: "Car",
-        price: 1500
-    },
-    {
         name: "Dar",
         price: 2100
     },
 ]
 export const History: FunctionComponent = () => 
 {
-    return <div>
-        <Typography variant="h5" >History</Typography>
-        <div style={{ paddingLeft : '8%', paddingRight : '8%' }} >
+    return <div style={{ paddingLeft : '8%', paddingRight : '8%', marginTop : '5%' }} >
+        <Typography style={{ fontWeight : 'bold' }} >History</Typography>
+        <div style={{ marginTop : 5, overflowY : 'scroll', height : '150px' }}  >
         {
             data.map(
-                (obj, ind) => <Paper style={{ display : 'flex', flexDirection : 'row', justifyContent : 'space-between', marginTop : 10, padding : 10 }} >
-                        <Typography> {obj.name} </Typography> 
-                        <Typography> {obj.price} </Typography> 
+                (obj, ind) => <Paper style={{ display : 'flex', flexDirection : 'row', justifyContent : 'space-between', marginTop : 10, padding : 10, marginLeft : 5, marginRight : 5 }} >
+                        <Typography style={{ fontSize : '12px' }}  > {obj.name} </Typography> 
+                        <Typography style={{ fontSize : '12px' }}  >&#36; {obj.price} </Typography> 
                      </Paper>
             )
         }
