@@ -1,9 +1,9 @@
-import React from 'react';
 import './App.css';
 import { MyPaper } from './Components/MyPaper';
+import './Components/style.css'
 
 function App() {
-  return <div style={{ height : '100vh', width : '100%', display : 'flex', alignItems : 'center', justifyContent : 'center' }} >
+  return <div className="rootDiv" >
       <MyPaper />
   </div>
 }
