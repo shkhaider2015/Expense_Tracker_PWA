@@ -20,4 +20,10 @@ export interface valueType {
     
 }
 
-export type initialContextValue = valueType | null
+export interface defaultValue {
+    transactions : null,
+    addTransaction : null
+    
+}
+
+export type initialContextValue = valueType | defaultValue

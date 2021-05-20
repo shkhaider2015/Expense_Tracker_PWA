@@ -10,7 +10,7 @@ const initialTransactions:ITransactionType[] = [
     { entity: "Milk", price : 130 },
 ]
 
-export const TransactionContext = React.createContext<initialContextValue>(null);
+export const TransactionContext = React.createContext<initialContextValue>({ transactions : null, addTransaction : null });
 
 export const TransactionProvider: React.FC = ({ children }) => 
 {
