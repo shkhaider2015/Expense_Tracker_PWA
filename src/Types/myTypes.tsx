@@ -26,4 +26,4 @@ export interface defaultValue {
     
 }
 
-export type initialContextValue = valueType | defaultValue
+export type initialContextValue = valueType 
