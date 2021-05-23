@@ -24,7 +24,7 @@ export const NewTransaction : FunctionComponent = () => {
         }
 
         const obj:ITransactionType = {
-            entity,
+            entity : entity,
             price : amount
         }
 
