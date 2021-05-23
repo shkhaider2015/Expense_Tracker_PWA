@@ -9,8 +9,9 @@
 
 .paperRoot
 {
-    width : 40%;
+    width : 100%;
     height : auto; 
+    margin-top: 2%;
     padding-top : 2%; 
     padding-bottom : 2%;
 }

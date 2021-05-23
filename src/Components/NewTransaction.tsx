@@ -11,7 +11,7 @@ const height = 44;
 
 export const NewTransaction : FunctionComponent = () => {
 
-    const {addTransaction} = React.useContext(TransactionContext);
+    const {transactions, addTransaction} = React.useContext(TransactionContext);
     const [entity, setEntity] = React.useState<string>("");
     const [amount, setAmount] = React.useState<number>(0)
 
@@ -25,7 +25,8 @@ export const NewTransaction : FunctionComponent = () => {
 
         const obj:ITransactionType = {
             entity : entity,
-            price : amount
+            price : amount,
+            id : transactions.length
         }
 
         

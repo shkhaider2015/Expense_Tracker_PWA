@@ -79,20 +79,24 @@ self.addEventListener('message', (event) => {
 
 // Any other custom service worker logic can go here.
 
-const filesToCache: string[] = [
-  './App.tsx',
-  './Components/History.tsx',
-  './Components/IncomeAndExpanse.tsx',
-  './Components/MyPaper.tsx',
-  './Components/NewTransaction.tsx',
-  './Components/style.css'
-]
-const cacheName: string = "expense-tracker";
+// const filesToCache: string[] = [
+//   './App.tsx',
+//   './Components/History.tsx',
+//   './Components/IncomeAndExpanse.tsx',
+//   './Components/MyPaper.tsx',
+//   './Components/NewTransaction.tsx',
+//   './Components/style.css',
+//   './Types/myTypes.tsx',
+//   './Reducers/TransactionContext.tsx',
+//   './Reducers/TransactionReducer.tsx'
+// ]
+// const cacheName: string = "expense-tracker";
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
-});
+// self.addEventListener('install', function(event) {
+//   event.waitUntil(
+//     caches.open(cacheName).then(function(cache) {
+//       console.log("Cache First")
+//       return cache.addAll(filesToCache);
+//     })
+//   );
+// });

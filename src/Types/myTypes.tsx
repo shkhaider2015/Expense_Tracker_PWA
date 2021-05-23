@@ -1,8 +1,8 @@
-import { type } from "os";
 
 export interface ITransactionType {
     entity:string,
-    price:number
+    price:number,
+    id : number
 }
 
 export interface IInitialTransactionType {
@@ -15,7 +15,8 @@ export interface AddAction {
 }
 export interface deleteAction {
     type : string,
-    payload : number
+    payload : number,
+    id : number
 }
 
 export type Action = AddAction | deleteAction
@@ -23,7 +24,7 @@ export type Action = AddAction | deleteAction
 export interface valueType {
     transactions : ITransactionType[],
     addTransaction : (transactionObject:ITransactionType) => void,
-    deleteTransaction : (transactionObject:number) => void
+    deleteTransaction : (transactionObject:ITransactionType) => void
     
 }
 
@@ -43,6 +44,4 @@ export type ReducerType= {
 export type Reducer<State, Action> = 
   (state: State, action: Action) => State;
 
-export type payloadType = 
-| { type : "ADD", payload : { entity : string, price : number } }
-| { type : "DELETE", payload : { index : number } }
+export enum payloadType  {add = "ADD", delete = "DELETE"}

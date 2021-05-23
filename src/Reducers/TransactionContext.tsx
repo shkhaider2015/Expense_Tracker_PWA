@@ -1,32 +1,23 @@
-import React, { Dispatch } from 'react'
-import { ITransactionType, initialContextValue, ReducerType, AddAction, deleteAction, Action, payloadType, IInitialTransactionType } from "../Types/myTypes";
+import React from 'react'
+import { ITransactionType, initialContextValue, AddAction } from "../Types/myTypes";
 import { TransactionReducer } from "./TransactionReducer";
 
 const initialTransactions:ITransactionType[] = [
-    { entity: "Cash", price : 1200 },
-    { entity: "Fruits", price : 400 },
-    { entity: "Vagitables", price : 200 },
-    { entity: "Milk", price : 130 },
+    { entity: "Cash", price : 1200, id : 3 },
+    { entity: "Fruits", price : 400, id : 2 },
+    { entity: "Vagitables", price : 200, id : 1 },
+    { entity: "Milk", price : 130, id : 0 },
 ]
-const initValue:number = 0
 
-const initFun = (iT:ITransactionType[]) => 
-{
-    return {
-        type : 'ADD',
-        payload : iT
-    }
-} 
 
-export const TransactionContext = React.createContext<initialContextValue>({ transactions : [], addTransaction : (initialTransactions) => "", deleteTransaction : (initValue) => "" });
 
-// export const TransactionContext = React.createContext<{ state : ITransactionType[] , dispatch : React.Dispatch<Action> }>({ state : initialTransactions, dispatch : () => undefined });
+export const TransactionContext = React.createContext<initialContextValue>({ transactions : [], addTransaction : (initialTransactions) => "", deleteTransaction : (initialTransactions) => "" });
 
 
 export const TransactionProvider: React.FC = ({ children }) => 
 {
-    // let [tt, setTT] = React.useState<ITransactionType[]>(initialTransactions)
-    let [transactions, dispatch] = React.useReducer(TransactionReducer, initialTransactions );
+
+    let [transactions, dispatch] = React.useReducer<React.Reducer<ITransactionType[], AddAction>>(TransactionReducer, initialTransactions );
 
     function addTransaction(transactionObject:ITransactionType)
     {
@@ -34,16 +25,21 @@ export const TransactionProvider: React.FC = ({ children }) =>
             type : "ADD",
             payload : {
                 entity : transactionObject.entity,
-                price: transactionObject.price
+                price: transactionObject.price,
+                id : transactionObject.id
             }
         })
     }
 
-    function deleteTransaction(index:number)
+    function deleteTransaction(transactionObject:ITransactionType)
     {
         dispatch({
             type : "DELETE",
-            payload : index
+            payload : {
+                entity : transactionObject.entity,
+                price: transactionObject.price,
+                id : transactionObject.id
+            }
         })
     }
 

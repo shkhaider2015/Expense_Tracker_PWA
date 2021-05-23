@@ -1,43 +1,24 @@
-import { ITransactionType, AddAction, deleteAction, Action, Reducer, ReducerType } from "../Types/myTypes";
-
-const TransactionReducerr = ( (state:ITransactionType[], action:AddAction) => {
-        console.log("Reducer : ", state)
-        console.log("Action Type", action.type)
-    switch(action.type)
-    {
-        case "ADD":
-            {
-                return [action.payload, ...state]
-            }
-        case "DELETE":
-            {
-                let ss = state.filter(transaction => transaction !== action.payload)
-                console.log("After : ", ss)
-                return [action.payload, ...state];
-            }
-        default:
-            return state;
-    }
-})
+import { ITransactionType, AddAction, payloadType } from "../Types/myTypes";
+import { set } from "idb-keyval";
 
 
 
-const TransactionReducer = (state:ITransactionType[], action:Action):ITransactionType[] => {
+const TransactionReducer:React.Reducer<ITransactionType[], AddAction> = (state, action):ITransactionType[] => {
     console.log("Reducer : ", state)
         console.log("Action-->Type", action.type)
     switch(action.type)
     {
-        case "ADD":
+        case payloadType.add:
             {
-                console.log("ADD : -> ", action.payload)
-                state.unshift(action.payload )
-                return state
+                let gg:ITransactionType[] = [action.payload, ...state];
+                set("data", gg)
+                return gg
             }
-        case "DELETE":
+        case payloadType.delete:
             {
-                console.log("DELETE : -> ", action.payload)
-                state.splice(action.payload, 1)
-                return state;
+                let gg:ITransactionType[] = state.filter((obj, ind) => obj.id !== action.payload.id);
+                set("data", gg)
+                return gg;
             }
         default:
             {

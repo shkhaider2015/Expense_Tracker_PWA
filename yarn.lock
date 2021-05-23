@@ -5934,6 +5934,11 @@
   dependencies:
     "postcss" "^7.0.14"
 
+"idb-keyval@^5.0.5":
+  "integrity" "sha512-cqi65rrjhgPExI9vmSU7VcYEbHCUfIBY+9YUWxyr0PyGizptFgGFnvZQ0w+tqOXk1lUcGCZGVLfabf7QnR2S0g=="
+  "resolved" "https://registry.npmjs.org/idb-keyval/-/idb-keyval-5.0.5.tgz"
+  "version" "5.0.5"
+
 "identity-obj-proxy@3.0.0":
   "integrity" "sha1-lNK9qWCERT7zb7xarsN+D3nx/BQ="
   "resolved" "https://registry.npmjs.org/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz"
