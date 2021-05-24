@@ -40,12 +40,12 @@ export const IncomeAndExpense: FunctionComponent = () => {
         return expance
     }
 
-
     React.useEffect(
         () => {
             setIncom(getIncom(transactions));
             setExpanse(getExpence(transactions));
             setTotal(getIncom(transactions) + getExpence(transactions));
+            
         },
         [transactions]
     )

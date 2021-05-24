@@ -3,6 +3,7 @@ import { Button, TextField, Typography } from "@material-ui/core";
 import { FunctionComponent } from "react";
 import { TransactionContext } from "../Reducers/TransactionContext";
 import { ITransactionType } from '../Types/myTypes';
+import { update } from "idb-keyval";
 
 
 const labelOffset = -6;
@@ -11,9 +12,16 @@ const height = 44;
 
 export const NewTransaction : FunctionComponent = () => {
 
-    const {transactions, addTransaction} = React.useContext(TransactionContext);
+    const {changeOccur} = React.useContext(TransactionContext);
     const [entity, setEntity] = React.useState<string>("");
     const [amount, setAmount] = React.useState<number>(0)
+
+    // React.useEffect(
+    //     () => {
+    //         changeOccur()
+    //     },
+    //     []
+    // )
 
     const handleSubmit = () =>
     {
@@ -26,11 +34,29 @@ export const NewTransaction : FunctionComponent = () => {
         const obj:ITransactionType = {
             entity : entity,
             price : amount,
-            id : transactions.length
+            id : Math.random()
         }
 
+        // get("data")
+        // .then(data => update<ITransactionType[]>("data", (val) => [obj, ...val?] ))
+        // .catch( err => console.error(err)
+        // )
+
+        // update<ITransactionType[]>("data", (val) => [obj, ...val?] )
+        // .then(() => console.log("Update Successfully"))
+        // .catch(err => console.log("Error occur : ", err))
+
+        update<ITransactionType[]>("data", (val) => val ? [obj, ...val] : [obj])
+        .then(() => {
+            console.log("Update Success !!")
+            changeOccur()
+        })
+        .catch(() => console.log("Update failure !!"))
+
+
         
-        addTransaction(obj);
+        
+        // addTransaction(obj);
         setAmount(0); setEntity("");
     }
 

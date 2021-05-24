@@ -7,6 +7,7 @@ import { NewTransaction } from "./NewTransaction";
 import './style.css'
 
 export const MyPaper: FunctionComponent = () => {
+    
     return <Paper elevation={3} className="paperRoot" >
         <Typography variant="h3" style={{ textAlign: 'center' }} >Expence Tracker</Typography>
         

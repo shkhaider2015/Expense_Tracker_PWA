@@ -1,3 +1,4 @@
+export enum payloadType  {add = "ADD", delete = "DELETE", change="CHANGE"}
 
 export interface ITransactionType {
     entity:string,
@@ -10,21 +11,23 @@ export interface IInitialTransactionType {
 }
 
 export interface AddAction {
-    type : string,
+    type : payloadType.add,
     payload : ITransactionType
 }
 export interface deleteAction {
-    type : string,
-    payload : number,
-    id : number
+    type : payloadType.delete,
+    payload : number
+}
+export interface CHANGE {
+    type : payloadType.change,
+    payload : ITransactionType[],
 }
 
-export type Action = AddAction | deleteAction
+export type Action = AddAction | deleteAction | CHANGE
 
 export interface valueType {
     transactions : ITransactionType[],
-    addTransaction : (transactionObject:ITransactionType) => void,
-    deleteTransaction : (transactionObject:ITransactionType) => void
+    changeOccur : () => void,
     
 }
 
@@ -43,5 +46,3 @@ export type ReducerType= {
 
 export type Reducer<State, Action> = 
   (state: State, action: Action) => State;
-
-export enum payloadType  {add = "ADD", delete = "DELETE"}
