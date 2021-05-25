@@ -19,10 +19,6 @@ export const History: FunctionComponent = () => {
             .catch(err => console.error(err))
     }
 
-    // React.useEffect(() => {
-    //         console.log("History : Transactions : ", transactions)
-            
-    //     },[transactions])
 
     return <div style={{ paddingLeft: '8%', paddingRight: '8%', marginTop: '5%' }} >
         <Typography style={{ fontWeight: 'bold' }} >History</Typography>

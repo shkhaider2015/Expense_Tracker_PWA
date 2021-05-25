@@ -7,7 +7,7 @@ import { AppOrSplash } from './Components/appORsplash';
 function App() {
 
   return <TransactionProvider> 
-  <Grid container alignContent="center" justify="center" style={{ backgroundColor: '#fcfcfc' }} >
+  <Grid container alignContent="center" justify="center" >
     <Grid item xs={10} sm={8} md={6} lg={4} xl={4} >
     
 
