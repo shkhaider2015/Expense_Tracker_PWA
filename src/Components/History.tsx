@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { IconButton, Paper, Typography } from "@material-ui/core";
 import { DeleteForeverRounded } from "@material-ui/icons";
 import { FunctionComponent } from "react";
@@ -19,11 +19,10 @@ export const History: FunctionComponent = () => {
             .catch(err => console.error(err))
     }
 
-    useEffect(() => {
-            console.log("tran", transactions)
-            changeOccur()
-            // eslint-disable-next-line
-        },[transactions])
+    // React.useEffect(() => {
+    //         console.log("History : Transactions : ", transactions)
+            
+    //     },[transactions])
 
     return <div style={{ paddingLeft: '8%', paddingRight: '8%', marginTop: '5%' }} >
         <Typography style={{ fontWeight: 'bold' }} >History</Typography>
