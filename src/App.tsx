@@ -1,4 +1,4 @@
-import { Grid, createMuiTheme, Theme, ThemeProvider } from '@material-ui/core';
+import { Grid, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import './App.css';
 import './Components/style.css'
 import { TransactionProvider } from './Reducers/TransactionContext';
@@ -6,7 +6,7 @@ import { AppOrSplash } from './Components/appORsplash';
 
 const outerTheme = createMuiTheme({
   palette: {
-    secondary: {
+    primary: {
       main: "#780073",
     },
   },
@@ -16,8 +16,8 @@ function App() {
 
   return <TransactionProvider>
     <ThemeProvider theme={outerTheme} >
-      <Grid container alignContent="center" justify="center" >
-        <Grid item xs={10} sm={8} md={6} lg={4} xl={4} >
+      <Grid container alignItems="center" justify="center" style={{ height : '100vh' }} >
+        <Grid item xs={12} sm={8} md={6} lg={4} xl={4} className="gridx" >
           <AppOrSplash />
         </Grid>
       </Grid >

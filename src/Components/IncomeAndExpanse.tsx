@@ -50,20 +50,20 @@ export const IncomeAndExpense: FunctionComponent = () => {
         <Typography style={{ marginTop: '5%', marginLeft: '0%', fontWeight: 'normal' }} > <span style={{ fontWeight: 'bold' }} >Your Balance</span> <br /> &#36; {total} </Typography>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "space-around", marginTop: '1%' }} >
 
-            <Paper style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }} >
-                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: 40, paddingRight: 40, paddingTop: 30 }} >
+            <Paper style={{ display: 'flex', flexDirection: 'column', textAlign: 'center', width : '37%' }} >
+                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: 30, paddingRight: 30, paddingTop: 30 }} >
                     <Typography   >INCOME</Typography>
-                    <Typography style={{ marginTop: 10, marginBottom: 'auto', fontWeight: 'bold' }} >&#36; <CountUp end={income} duration={3} /> </Typography>
+                    <Typography style={{ marginTop: 10, marginBottom: 'auto', fontWeight: 'bold', fontSize : '100%' }} >&#36; <CountUp end={income} duration={3} /> </Typography>
                 </div>
-                <div style={{ width: '100%', height: '3px', backgroundColor: 'red', marginTop: 30, borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} ></div>
+                <div style={{ width: '100%', height: '3px', backgroundColor: 'green', marginTop: 30, borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} ></div>
             </Paper>
 
-            <Paper style={{ display: 'flex', flexDirection: 'column', textAlign: 'center', }} >
-                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: 40, paddingRight: 40, paddingTop: 30 }} >
+            <Paper style={{ display: 'flex', flexDirection: 'column', textAlign: 'center', width : '37%' }} >
+                <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: 30, paddingRight: 30, paddingTop: 30 }} >
                     <Typography   >EXPANSE</Typography>
                     <Typography style={{ marginTop: 10, marginBottom: 'auto', fontWeight: 'bold' }} >&#36; <CountUp end={expanse} duration={3} /></Typography>
                 </div>
-                <div style={{ width: '100%', height: '3px', backgroundColor: 'green', marginTop: 30, borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} ></div>
+                <div style={{ width: '100%', height: '3px', backgroundColor: 'red', marginTop: 30, borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }} ></div>
             </Paper>
 
         </div>
