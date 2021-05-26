@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "https://shkhaider_pwa_expanse_tracker.surge.sh/",
+      "sha256_cert_fingerprints": ["77:DE:54:9F:2E:9D:29:D1:56:22:9B:AB:F2:3A:09:7B:28:24:30:24:57:2A:0E:98:E9:47:EE:28:D6:DC:C6:36"]
+    }
+  }
+]
