@@ -37,6 +37,12 @@ jobs:
          
       - name: creating build
         run: sudo yarn build
+      
+      - name: go to build
+        run: cd build
+      
+      - name: copy index.html to 200.html
+        run: cp index.html 200.html
         
       - name: installing Surge
         run: npm install --global surge
