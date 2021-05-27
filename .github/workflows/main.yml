@@ -42,7 +42,7 @@ jobs:
         run: cd build
       
       - name: copy
-        run: cp index.html 200.html
+        run: sudo cp index.html 200.html
         
       - name: installing Surge
         run: npm install --global surge
