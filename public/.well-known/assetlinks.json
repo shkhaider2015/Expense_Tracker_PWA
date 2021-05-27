@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.zedeth",
+      "sha256_cert_fingerprints": ["9A:3B:B2:DD:B3:6D:B7:4D:57:2D:22:69:AF:A8:81:15:7D:53:20:2A:59:A6:32:39:5A:2D:26:21:41:9D:80:6C"]
+    }
+  }
+]
