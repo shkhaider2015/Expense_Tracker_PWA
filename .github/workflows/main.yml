@@ -41,10 +41,10 @@ jobs:
       - name: go to build
         run: cd build
       
-      - name: copy index.html to 200.html
+      - name: copy
         run: cp index.html 200.html
         
       - name: installing Surge
         run: npm install --global surge
       - name: deploy on surge
-        run: surge ./build --domain https://shkhaider_pwa_expanse_tracker.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+        run: surge --domain https://shkhaider_pwa_expanse_tracker.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
