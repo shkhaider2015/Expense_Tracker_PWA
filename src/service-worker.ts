@@ -82,8 +82,6 @@ self.addEventListener('message', (event) => {
 const filesToCache: string[] = [
   './index.tsx',
   './App.tsx',
-  './Images/Frame512.png',
-  './Images/Frame192.png'
 ]
 const cacheName: string = "expense-tracker";
 
