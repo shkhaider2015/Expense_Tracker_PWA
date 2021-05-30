@@ -80,7 +80,7 @@ self.addEventListener('message', (event) => {
 // Any other custom service worker logic can go here.
 
 const filesToCache: string[] = [
-  './index.html'
+  'index.html'
 ]
 const cacheName: string = "expense-tracker";
 
