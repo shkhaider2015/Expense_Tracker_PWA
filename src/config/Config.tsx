@@ -1,15 +1,15 @@
 interface configType {
-  apiKey : string,
-  authDomain : string,
-  projectId : string,
-  storageBucket : string,
-  messagingSenderId : string,
-  appId : string,
+  apiKey : string|undefined,
+  authDomain : string|undefined,
+  projectId : string|undefined,
+  storageBucket : string|undefined,
+  messagingSenderId : string|undefined,
+  appId : string|undefined,
 
 }
 
 
-const firebaseConfig: configType = {
+export const firebaseConfig: configType = {
     apiKey: process.env.REACT_APP_apiKey,
     authDomain: process.env.REACT_APP_authDomain,
     projectId: process.env.REACT_APP_projectId,
@@ -17,3 +17,5 @@ const firebaseConfig: configType = {
     messagingSenderId: process.env.REACT_APP_messagingSenderId,
     appId: process.env.REACT_APP_appId
   };
+
+  
