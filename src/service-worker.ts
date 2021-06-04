@@ -77,19 +77,34 @@ self.addEventListener('message', (event) => {
   }
 });
 
+
 // Any other custom service worker logic can go here.
+
+
+
 
 const filesToCache: string[] = [
   'index.html',
   '200.html'
 ]
-const cacheName: string = "expense-tracker";
+const cacheName = "expense-tracker";
 
 self.addEventListener('install', function(event) {
+  console.log("SWT - Install : Runs")
   event.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      console.log("Cache First")
-      return cache.addAll(filesToCache);
+      console.log("SWT - Install - waitUntil : Runs")
+      return cache.addAll([
+        'index.html',
+        '200.html'
+      ]);
     })
   );
 });
+
+self.addEventListener('activate', function (event) {
+  console.log("Activated !!!")
+  event.waitUntil(
+    console.log("Activated !!")
+  )
+} )
