@@ -4,7 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "xyz.appmaker.yrkfli",
-      "sha256_cert_fingerprints": ["79:8B:F8:8C:10:47:33:19:30:AB:8A:62:E7:E7:72:4B:3D:4D:CF:D9:DB:E8:47:7D:66:E2:7D:53:E0:B5:76:19"]
+      "sha256_cert_fingerprints": ["3F:60:C6:B7:6D:15:8B:BF:FD:21:40:BC:22:A2:FC:C1:3D:73:F5:B1:2C:F7:50:25:F5:25:A9:5E:BE:DB:20:5D"]
     }
   }
 ]
