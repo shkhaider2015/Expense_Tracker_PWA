@@ -84,6 +84,7 @@ self.addEventListener('message', (event) => {
 
 
 const filesToCache: string[] = [
+  '/',
   'index.html',
   '200.html'
 ]
@@ -108,36 +109,3 @@ self.addEventListener('activate', function (event) {
     console.log("Activated !!")
   )
 } )
-
-
-// Scripts for firebase and firebase messaging
-import firebase from 'firebase';
-import 'firebase/messaging'
-
-// Initialize the Firebase app in the service worker by passing the generated config
-var firebaseConfig = {
-  apiKey: "AIzaSyCzQ0LP3j5Kwhe3-G_n22eAbdp-hdbmwO8",
-    authDomain: "pwapushnotifications-fb756.firebaseapp.com",
-    projectId: "pwapushnotifications-fb756",
-    storageBucket: "pwapushnotifications-fb756.appspot.com",
-    messagingSenderId: "251076410633",
-    appId: "1:251076410633:web:6b8d6499ac146adf95e7d8",
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Retrieve firebase messaging
-const messaging = firebase.messaging();
-
-messaging.onBackgroundMessage(function(payload:any) {
-  console.log('Received background message ', payload);
-
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
-  };
-
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
-});
-
