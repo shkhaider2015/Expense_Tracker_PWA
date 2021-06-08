@@ -22,10 +22,7 @@
     }
   ],
   "start_url": "https://shkhaider_pwa_expanse_tracker.surge.sh/",
-  "scope": [
-    "/.weel-know/assetlinks.json",
-    "/manifest.webmanifest"
-  ],
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#780073",
   "background_color": "#ffffff",
