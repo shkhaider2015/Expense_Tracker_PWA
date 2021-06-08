@@ -84,7 +84,6 @@ self.addEventListener('message', (event) => {
 
 
 const filesToCache: string[] = [
-  '/',
   'index.html',
   '200.html'
 ]
@@ -98,7 +97,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         'index.html',
         '200.html'
-      ]);
+      ]).then(() => console.log("SWT - Cached Success")).catch((e) => console.log("SWT Cached Failed : ", e));
     })
   );
 });
