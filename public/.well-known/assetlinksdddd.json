@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.yrkfli",
+      "sha256_cert_fingerprints": [
+        "3F:60:C6:B7:6D:15:8B:BF:FD:21:40:BC:22:A2:FC:C1:3D:73:F5:B1:2C:F7:50:25:F5:25:A9:5E:BE:DB:20:5D"
+      ]
+    }
+  }
+]
